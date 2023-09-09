@@ -1,18 +1,23 @@
 <?php
-    $testedVariable = 5;
-    if (is_null($testedVariable)) {
-        echo "$testedVariable is NULL.";
-        echo '<br>Значение переменной не задано.';
-    } elseif (is_bool($testedVariable)) {
-        echo "$testedVariable is boolean.";
-        echo '<br>Данная переменная относится к переменным логического типа.';
-    } elseif (is_float($testedVariable)) {
-        echo "$testedVariable is float.";
-        echo '<br>Данная переменная является числом с плавающей точкой.';
-    } elseif (is_int($testedVariable)) {
-        echo "$testedVariable is integer.";
-        echo '<br>Данная переменная является целым числом.';
-    } elseif (is_string($testedVariable)) {
-        echo "$testedVariable is string.";
-        echo '<br>Данная переменная имеет строчный тип.';
-    };
+
+$variable = null;
+
+switch (true) {
+  case (is_bool($variable)):
+    echo 'bool';
+    break;
+  case (is_float($variable)):
+    echo 'float';
+    break;
+  case (is_int($variable)):
+    echo 'int';
+    break;
+  case (is_string($variable)):
+    echo 'string';
+    break;
+  case (is_null($variable)):
+    echo 'null';
+    break;
+  default:
+    echo 'other';
+}
